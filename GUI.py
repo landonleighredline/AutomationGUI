@@ -2,15 +2,21 @@ import tkinter as tk
 from tkinter import *
 import os
 from datetime import date
+import sys
 
 #create GUI
-gui = tk.Tk()
-gui.geometry('600x300')
+gui = Tk()
+gui.geometry('300x500')
 gui.configure(bg='#292d34')
 
 #Get todays date
 today = date.today()
 date = today.strftime("%m-%d-%y")
+
+jobInput = ''
+assetInput = ''
+locationInput = ''
+programInput = ''
 
 #Array of options for location dropdown
 locationOptions = [
@@ -27,22 +33,17 @@ programOptions = [
     'Both'
 ]
 
-#Function to get job number from text box
-def retrieveJobInput():
-    jobInput = self.jobBox.get("1.0",END)
-
-#Function to get vehicle name from text box
-def retrieveVehicleInput():
-    vehicleInput = self.vehicleBox.get("1.0",END)
-
-
 #Function to add jobs to text file
 def addFile():
+    jobInput = jobBox.get("1.0",'end-1c')
+    locationInput = locationPlaceholder.get()
+    assetInput = assetBox.get("1.0",'end-1c')
+    programInput = programPlaceholder.get()
+
+    fileInfo = jobInput + ',' + locationInput + ',' + assetInput + ',' + programInput + ' '
     filename = date + '.txt'
-    #f = open(filename, 'w')
-    #f.close()
     f = open(filename, 'a+')
-    f.write('info')
+    f.write(fileInfo)
     f.close()
 
 #Function to start the script
@@ -54,7 +55,9 @@ jobLabel = Label(gui, text='Job Number')
 jobLabel.configure(bg='#302c34', fg='white')
 jobBox = Text(gui, bg='white', height=1, width=10, padx=5, pady=5)
 jobLabel.pack()
+jobLabel.place(y=20, x=115)
 jobBox.pack()
+jobBox.place(y=40, x=105)
 
 #Job Location Dropdown
 locationLabel = Label(gui, text='Job Location')
@@ -64,31 +67,34 @@ locationPlaceholder.set('ATL')
 locationDrop = OptionMenu(gui, locationPlaceholder,  *locationOptions)
 locationDrop.configure(bg='#889099')
 locationLabel.pack()
+locationLabel.place(y=100, x=112)
 locationDrop.pack()
+locationDrop.place(y=120, x=115)
 
 #Vehicle Text Box
 assetLabel = Label(gui, text='Asset Name')
 assetLabel.configure(bg='#302c34', fg='white')
 assetBox = Text(gui, bg='white', height=1, width=10, padx=5, pady=5)
 assetLabel.pack()
+assetLabel.place(y=180, x=115)
 assetBox.pack()
+assetBox.place(y=200, x=105)
 
 #Program Dropdown
-programLabel = Label(gui, text='Program Used')
+programLabel = Label(gui, text='Program')
 programLabel.configure(bg='#302c34', fg='white')
 programPlaceholder = StringVar()
 programPlaceholder.set('Scene')
 programDrop = OptionMenu(gui, programPlaceholder,  *programOptions)
 programDrop.configure(bg='#889099')
 programLabel.pack()
+programLabel.place(y=260, x=120)
 programDrop.pack()
+programDrop.place(y=280, x=110)
 
 #Add to File Button
 addFileButton = tk.Button(gui, text='Add Job', padx=10, pady=5, fg='black', bg='#889099', command=addFile)
 addFileButton.pack()
-
-#Start Script Button
-startScriptButton = tk.Button(gui, text='Start Script', padx=10, pady=5, fg='black', bg='#889099', command=startScript)
-startScriptButton.pack()
+addFileButton.place(y=400, x=115)
 
 gui.mainloop()
