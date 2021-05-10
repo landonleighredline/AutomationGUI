@@ -81,7 +81,7 @@ locationDrop = OptionMenu(gui, locationPlaceholder,  *locationOptions)
 locationLabel.pack()
 locationLabel.place(y=100, x=102)
 locationDrop.pack()
-locationDrop.place(y=125, x=115)
+locationDrop.place(y=125, x=117)
 
 #Vehicle Text Box
 assetLabel = Label(gui, text='Asset Name')
