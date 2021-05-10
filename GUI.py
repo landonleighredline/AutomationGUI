@@ -44,31 +44,7 @@ def addFile():
     assetBox.delete('1.0', END)
 
 #Function to check input of text box
-def checkJob():
-    global jobInput, assetInput, locationInput, programInput
-    jobInput = jobBox.get("1.0",'end-1c')
-    locationInput = locationPlaceholder.get()
-    assetInput = assetBox.get("1.0",'end-1c')
-    programInput = programPlaceholder.get()
-    #Checks for correct input and give popup on incorrect input
-    if jobInput.isalnum() and assetInput.isalnum():
-        addFile()
-    else:
-        for i in range(11):
-            if i%11 == 0:
-                popup = ctypes.windll.user32.MessageBoxW
-                threading.Thread(target = lambda :popup(None, 'Invalid Input', 'Error', 0)).start()
-        jobBox.delete('1.0', END)
-        assetBox.delete('1.0', END)
 
-#Job Number Text Box
-jobLabel = Label(gui, text='Job Number')
-jobLabel.configure(bg='#302c34', fg='white', font='bold')
-jobBox = Text(gui, bg='white', height=1, width=10, padx=5, pady=5)
-jobLabel.pack()
-jobLabel.place(y=20, x=105)
-jobBox.pack()
-jobBox.place(y=45, x=105)
 
 #Job Location Dropdown
 locationLabel = Label(gui, text='Job Location')
