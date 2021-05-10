@@ -36,8 +36,10 @@ programOptions = [
 #Function to add jobs to text file
 def addFile():
     fileInfo = jobInput + ',' + locationInput + ',' + assetInput + ',' + programInput + ' '
-    filename = date + '.txt'
-    f = open(filename, 'a+')
+    savePath = r'C:\Users\LandonLeigh\Fake_Server'
+    fileName = date + '.txt'
+    completeName = os.path.join(savePath, fileName)
+    f = open(completeName, 'a+')
     f.write(fileInfo)
     f.close()
     jobBox.delete('1.0', END)
