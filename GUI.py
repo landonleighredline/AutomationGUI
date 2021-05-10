@@ -13,6 +13,7 @@ gui.configure(bg='#292d34')
 today = date.today()
 date = today.strftime("%m-%d-%y")
 
+#Initialize Variables Globally
 jobInput = ''
 assetInput = ''
 locationInput = ''
@@ -39,7 +40,6 @@ def addFile():
     locationInput = locationPlaceholder.get()
     assetInput = assetBox.get("1.0",'end-1c')
     programInput = programPlaceholder.get()
-
     fileInfo = jobInput + ',' + locationInput + ',' + assetInput + ',' + programInput + ' '
     filename = date + '.txt'
     f = open(filename, 'a+')
