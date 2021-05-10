@@ -5,7 +5,7 @@ block_cipher = None
 
 
 a = Analysis(['GUI.py'],
-             pathex=['C:\\Users\\LandonLeigh\\Documents\\GitHub\\AutomationScript'],
+             pathex=['C:\\Users\\LandonLeigh\\Documents\\GitHub\\AutomationGUI'],
              binaries=[],
              datas=[],
              hiddenimports=[],
