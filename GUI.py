@@ -45,15 +45,13 @@ def addFile():
 
 #Function to check input of text box
 def checkJob():
-    global jobInput
-    global assetInput
-    global locationInput
-    global programInput
+    global jobInput, assetInput, locationInput, programInput
     jobInput = jobBox.get("1.0",'end-1c')
     locationInput = locationPlaceholder.get()
     assetInput = assetBox.get("1.0",'end-1c')
     programInput = programPlaceholder.get()
-    if jobInput.isalnum() and assetInput.isalnum():#(re.search(regex, jobInput)) and (re.search(regex, assetInput)):
+    #Checks for correct input and give popup on incorrect input
+    if jobInput.isalnum() and assetInput.isalnum():
         addFile()
     else:
         for i in range(11):
