@@ -14,7 +14,6 @@ def automate(job_list):
     for job in job_list:
         if job[3] == 'Scene':
             run_scene(job)
-            #print('run scene ' + str(job))
         elif job[3] == 'Pix4D':
             pass
         else:
