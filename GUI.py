@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import *
 from datetime import date
 import ctypes, threading, sys, re, os
+import ENTRY_FILE
 
 #create GUI
 gui = Tk()
@@ -13,6 +14,7 @@ windowHeight = gui.winfo_reqheight()
 positionRight = int(gui.winfo_screenwidth()/2 - windowWidth/2)
 positionDown = int(gui.winfo_screenheight()/3 - windowHeight/2)
 gui.geometry("+{}+{}".format(positionRight, positionDown))
+gui.resizable(False, False)
 
 #Get todays date
 today = date.today()
