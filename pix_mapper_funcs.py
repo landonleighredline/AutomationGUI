@@ -9,7 +9,7 @@ from time import sleep
 
 screen_center = (gui.size()[0] / 2, (gui.size()[1] / 2) - 50)
 
-job = ['J8804', 'CLT', 'land rover', 'Pix4D']
+#job = ['J8804', 'CLT', 'landrover', 'Pix4D']
 
 def start():
     os.startfile(pix_mapper_path)
@@ -27,7 +27,7 @@ def new_project(job):
     gui.press('enter')
 
 def load_pics(job):
-    gui.write(r'C:\Users\LandonLeigh\Desktop\J8804\Drone\Drone\Land Rover')
+    gui.write(new_job_folder + '\\' + job[0] + scan_folder + r'\filtered')
     gui.press('enter')
     time.sleep(1)
     gui.press('tab')
@@ -44,24 +44,24 @@ def load_pics(job):
     time.sleep(5)
     gui.press('tab',presses=5)
     time.sleep(5)
-    #gui.press('enter',presses=2)
-    #time.sleep(3)
     gui.press('enter')
     time.sleep(1)
     gui.press('enter')
     time.sleep(7)
-    if job[2] == 'site':
-        pass
-    else:
+    if job[2] != 'site':
         gui.press('down')
-    #gui.press('enter')
+    else:
+        pass
+    gui.press('enter')
 
-
-def process_images():
-    pass
-
+def start_processing():
+    check_for_image(pixDSMOrthoIndex)
+    gui.click()
+    check_for_image(pixMapperStart)
+    gui.click()
 
 def close_pix():
+    check_for_image(pixDone)
     gui.hotkey('alt','f4')
 
 def check_for_image(image):
@@ -71,9 +71,3 @@ def check_for_image(image):
         gui.moveTo(image_location)
         if gui.position() == image_location:
             checking = False
-
-start()
-new_project(job)
-load_pics(job)
-#process_images()
-#close_pix()

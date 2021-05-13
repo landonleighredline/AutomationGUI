@@ -7,7 +7,7 @@ new_job_template = r'C:\Users\LandonLeigh\Desktop\TestTemplate'
 new_job_folder = r'C:\Users\LandonLeigh\Desktop'
 
 ##########APP PATHS###############
-scene_path = 'C:\Program Files\FARO\SCENE2\SCENE.exe'
+scene_path = 'C:\Program Files\FARO\SCENE\SCENE.exe'
 pix_path = 'C:\Program Files\Pix4Dmatic\Pix4Dmatic.exe'
 pix_mapper_path = 'C:\Program Files\Pix4Dmapper\pix4dmapper.exe'
 

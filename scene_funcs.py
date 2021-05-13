@@ -15,10 +15,10 @@ def start():
     time.sleep(5)
 
 def close_pop_ups():
-    gui.press('tab', presses=2)
-    gui.press('space')
-    #check_for_image(close_png)
-    #gui.click()
+    #gui.press('tab', presses=2)
+    #gui.press('space')
+    check_for_image(close_png)
+    gui.click()
 
 def new_project(job):
     check_for_image(create_png)

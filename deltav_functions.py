@@ -1,6 +1,8 @@
 from Settings import *
 from scene_pics import *
+from pix_mapper_pics import *
 import scene_funcs as scene
+import pix_mapper_funcs as pix
 import pyautogui as gui
 import os
 import time
@@ -79,4 +81,13 @@ def run_scene(job):
         scene.close_scene()
 
 def run_pix(job):
+    #Open Pix4DMapper
     pix.start()
+    #Create new project
+    pix.new_project(job)
+    #Load in drone pictures
+    pix.load_pics(job)
+    #Start processing all 3 steps
+    pix.start_processing()
+    #Once done processing close Pix4DMapper
+    pix.close_pix()
