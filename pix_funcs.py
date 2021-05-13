@@ -67,7 +67,7 @@ def check_for_image(image):
             checking = False
 
 start()
-new_project()
-load_pics()
-process_images()
-#close_pix()
+#new_project()
+#load_pics()
+#process_images()
+close_pix()
