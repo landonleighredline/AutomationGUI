@@ -38,7 +38,7 @@ programOptions = [
 #Function to add jobs to text file
 def addFile():
     fileInfo = jobInput + ',' + locationInput + ',' + assetInput + ',' + programInput + ' '
-    savePath = r'C:\Users\LandonLeigh\Fake_Server\CLT'
+    savePath = r'C:\Users\LandonLeigh\Desktop\Fake_Server\CLT'
     fileName = date + '.txt'
     completeName = os.path.join(savePath, fileName)
     f = open(completeName, 'a+')
