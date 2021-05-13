@@ -58,7 +58,6 @@ def find_jobs():
 
     return list_o_jobs, scene_jobs, pix4d_jobs
 
-
 def run_scene(job):
     kill_job = False
     while not kill_job:
@@ -78,3 +77,6 @@ def run_scene(job):
         scene.export_xyz_e57(job)
         scene.export_project(job)
         scene.close_scene()
+
+def run_pix(job):
+    pix.start()

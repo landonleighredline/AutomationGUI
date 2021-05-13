@@ -15,7 +15,7 @@ def automate(job_list):
         if job[3] == 'Scene':
             run_scene(job)
         elif job[3] == 'Pix4D':
-            pass
-            #run_pix(job)
+            run_pix(job)
         else:
             run_scene(job)
+            run_pix(job)
